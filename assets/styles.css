@@ -34,7 +34,7 @@
 
 
 header {
-  background: var(--secondary);
+  background: linear-gradient(to bottom,#121e3c ,var(--background));
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -121,7 +121,11 @@ main {
   width: 80%;
   min-width: 500px; /*Para que nunca ocupe menos que esto en desktop*/
   font-weight: 800;
-  color: var(--text-white);
+  /* color: var(--text-white); */
+  background: linear-gradient(to top, #30cfd0, #c43ad6);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .hero-info p {
@@ -483,3 +487,49 @@ footer p {
 footer span {
   font-weight: 800;
 }
+
+/* ocultar menu hamburguesa y checkbox*/
+
+#menu-toggle, #cart-toggle, .menu-label {
+  display: none;
+
+}
+
+.cart {
+  position: absolute;
+  top: 65px;
+  right: 0;
+  padding: 50px 30px;
+  background: linear-gradient(to top, #121e3c, var(--background));
+  border-left: 1px solid var(--nav-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: calc(100vh - 65px);
+  overflow-y: scroll;
+  display: none;
+  z-index: 2;
+}
+
+/* ocultar barra de scroll del carrito */
+.cart::-webkit-scrollbar {
+  display: none;
+}
+
+.cart h2 {
+  color: var(--text-white);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #2323234e;
+  padding: 20px;
+  border: 1px solid var(--electric);
+  border-radius: 10px;
+}
+
